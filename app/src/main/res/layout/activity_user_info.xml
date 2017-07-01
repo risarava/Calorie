@@ -39,9 +39,10 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/border_gray_corner_small"
+                    android:hint="0"
                     android:inputType="number"
                     android:maxLength="3"
-                    android:padding="@dimen/padding_mini" />
+                    android:padding="@dimen/padding_small" />
             </LinearLayout>
 
             <LinearLayout
@@ -63,9 +64,10 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/border_gray_corner_small"
+                    android:hint="0"
                     android:inputType="number"
                     android:maxLength="3"
-                    android:padding="@dimen/padding_mini" />
+                    android:padding="@dimen/padding_small" />
             </LinearLayout>
 
             <LinearLayout
@@ -87,14 +89,16 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:background="@drawable/border_gray_corner_small"
+                    android:hint="0"
                     android:inputType="number"
                     android:maxLength="3"
-                    android:padding="@dimen/padding_mini" />
+                    android:padding="@dimen/padding_small" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="horizontal"
                 android:padding="@dimen/padding_mini">
 
@@ -105,14 +109,18 @@
                     android:text="@string/user_info_religion"
                     android:textSize="@dimen/text_small" />
 
-                <EditText
-                    android:id="@+id/edittextReligion"
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/border_gray_corner_small"
-                    android:inputType="text"
-                    android:padding="@dimen/padding_mini" />
+                    android:background="@drawable/border_gray_corner_small">
+
+                    <Spinner
+                        android:id="@+id/spinnerReligion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
@@ -128,14 +136,17 @@
                     android:text="@string/user_info_activity"
                     android:textSize="@dimen/text_small" />
 
-                <EditText
-                    android:id="@+id/edittextActivity"
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/border_gray_corner_small"
-                    android:inputType="text"
-                    android:padding="@dimen/padding_mini" />
+                    android:background="@drawable/border_gray_corner_small">
+
+                    <Spinner
+                        android:id="@+id/spinnerActivity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -151,14 +162,17 @@
                     android:text="@string/user_info_exercise"
                     android:textSize="@dimen/text_small" />
 
-                <EditText
-                    android:id="@+id/edittextExercise"
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="@drawable/border_gray_corner_small"
-                    android:inputType="text"
-                    android:padding="@dimen/padding_mini" />
+                    android:background="@drawable/border_gray_corner_small">
+
+                    <Spinner
+                        android:id="@+id/spinnerExercise"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

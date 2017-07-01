@@ -21,7 +21,7 @@ public class CalculatorResultActivity extends AbstractAppCompatActivity {
 
     @Override
     protected void bindUI(Bundle savedInstanceState) {
-
+        setTitle(R.string.title_toolbar_calculation_result);
     }
 
     @Override

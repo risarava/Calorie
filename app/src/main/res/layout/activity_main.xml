@@ -14,10 +14,25 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycleView"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textviewNotFound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:padding="@dimen/padding_small"
+                android:text="@string/error_not_found"
+                android:textSize="@dimen/text_small"
+                android:visibility="gone" />
+        </RelativeLayout>
 
     </LinearLayout>
 
@@ -47,7 +62,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/food_and_kg_calorie"
+            android:text="@string/food_and_drink_kg_calorie"
             android:textSize="@dimen/text_small" />
     </LinearLayout>
 

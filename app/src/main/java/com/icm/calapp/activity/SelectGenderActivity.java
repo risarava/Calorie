@@ -8,6 +8,9 @@ import com.icm.calapp.R;
 import com.icm.calapp.custom.AbstractActivity;
 
 public class SelectGenderActivity extends AbstractActivity {
+    public static final String EXTRA_GENDER = "GENDER";
+    public static final int GENDER_MEN = 1;
+    public static final int GENDER_WOMEN = 0;
 
     private Intent intent;
 
@@ -28,11 +31,13 @@ public class SelectGenderActivity extends AbstractActivity {
 
     public void menButton(View view) {
         intent = new Intent(activity, UserInfoActivity.class);
+        intent.putExtra(EXTRA_GENDER, GENDER_MEN);
         startActivity(intent);
     }
 
     public void womenButton(View view) {
         intent = new Intent(activity, UserInfoActivity.class);
+        intent.putExtra(EXTRA_GENDER, GENDER_WOMEN);
         startActivity(intent);
     }
 }

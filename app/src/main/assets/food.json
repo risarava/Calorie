@@ -1,0 +1,263 @@
+[
+  {
+    "id": 0,
+    "name": "ข้าวสตูว์ไก่",
+    "unit": "1 จาน",
+    "typeId": 1,
+    "type": "ไก่",
+    "calorie": 465,
+    "isIslamic": true
+  },
+  {
+    "id": 1,
+    "name": "ข้าวไก่อบ",
+    "unit": "1 จาน",
+    "typeId": 1,
+    "type": "ไก่",
+    "calorie": 490,
+    "isIslamic": true
+  },
+  {
+    "id": 2,
+    "name": "ข้าวผัดกระเพราไก่ไข่ดาว",
+    "unit": "1 จาน",
+    "typeId": 1,
+    "type": "ไก่",
+    "calorie": 630,
+    "isIslamic": true
+  },
+  {
+    "id": 3,
+    "name": "ข้าวผัดกุนเชียง",
+    "unit": "1 จาน",
+    "typeId": 1,
+    "type": "ไก่",
+    "calorie": 590,
+    "isIslamic": true
+  },
+  {
+    "id": 4,
+    "name": "ข้าวผัดแกงเขียวหวานไก่",
+    "unit": "1 จาน",
+    "typeId": 1,
+    "type": "ไก่",
+    "calorie": 630,
+    "isIslamic": true
+  },
+  {
+    "id": 5,
+    "name": "ข้าวผัดสับปะรดไก่",
+    "unit": "1 จาน",
+    "typeId": 1,
+    "type": "ไก่",
+    "calorie": 575,
+    "isIslamic": true
+  },
+  {
+    "id": 6,
+    "name": "ข้าวผัดไส้กรอกไก่",
+    "unit": "1 จาน",
+    "typeId": 1,
+    "type": "ไก่",
+    "calorie": 335,
+    "isIslamic": true
+  },
+  {
+    "id": 7,
+    "name": "ข้าวมันไก่",
+    "unit": "1 จาน",
+    "typeId": 1,
+    "type": "ไก่",
+    "calorie": 695,
+    "isIslamic": true
+  },
+  {
+    "id": 8,
+    "name": "ข้าวมันไก่ทอด",
+    "unit": "1 จาน",
+    "typeId": 1,
+    "type": "ไก่",
+    "calorie": 590,
+    "isIslamic": true
+  },
+  {
+    "id": 9,
+    "name": "ข้าวราดหน้าไก่",
+    "unit": "1 จาน",
+    "typeId": 1,
+    "type": "ไก่",
+    "calorie": 540,
+    "isIslamic": true
+  },
+  {
+    "id": 10,
+    "name": "ข้าวผัดกระเพรากุ้ง",
+    "unit": "1 จาน",
+    "typeId": 2,
+    "type": "กุ้ง",
+    "calorie": 540,
+    "isIslamic": true
+  },
+  {
+    "id": 11,
+    "name": "ข้าวผัดกุ้งใส่ไข่",
+    "unit": "1 จาน",
+    "typeId": 2,
+    "type": "กุ้ง",
+    "calorie": 595,
+    "isIslamic": true
+  },
+  {
+    "id": 12,
+    "name": "ข้าวผัดกุ้งใส่ไข่",
+    "unit": "1 จาน",
+    "typeId": 2,
+    "type": "กุ้ง",
+    "calorie": 595,
+    "isIslamic": true
+  },
+  {
+    "id": 13,
+    "name": "ข้าวหน้ากุ้งผัดพริดสด",
+    "unit": "1 จาน",
+    "typeId": 2,
+    "type": "กุ้ง",
+    "calorie": 495,
+    "isIslamic": true
+  },
+  {
+    "id": 14,
+    "name": "ข้าวกุ้งทอดกระเทียมพริกไทย",
+    "unit": "1 จาน",
+    "typeId": 2,
+    "type": "กุ้ง",
+    "calorie": 495,
+    "isIslamic": true
+  },
+  {
+    "id": 15,
+    "name": "ข้าวไข่เจียว",
+    "unit": "1 จาน",
+    "typeId": 1,
+    "type": "ไก่",
+    "calorie": 445,
+    "isIslamic": true
+  },
+  {
+    "id": 16,
+    "name": "ข้าวขาหมู",
+    "unit": "1 จาน",
+    "typeId": 3,
+    "type": "หมู",
+    "calorie": 690,
+    "isIslamic": false
+  },
+  {
+    "id": 17,
+    "name": "ข้าวผัดกระเพราหมู",
+    "unit": "1 จาน",
+    "typeId": 3,
+    "type": "หมู",
+    "calorie": 580,
+    "isIslamic": false
+  },
+  {
+    "id": 18,
+    "name": "ข้าวผัดปูใส่ไข่",
+    "unit": "1 จาน",
+    "typeId": 4,
+    "type": "ปู",
+    "calorie": 535,
+    "isIslamic": true
+  },
+  {
+    "id": 19,
+    "name": "ข้าวหมูกระเทียม",
+    "unit": "1 จาน",
+    "typeId": 3,
+    "type": "หมู",
+    "calorie": 560,
+    "isIslamic": false
+  },
+  {
+    "id": 20,
+    "name": "ข้าวหมูแดง",
+    "unit": "1 จาน",
+    "typeId": 3,
+    "type": "หมู",
+    "calorie": 440,
+    "isIslamic": false
+  },
+  {
+    "id": 21,
+    "name": "ข้าวเหนียวหมูทอด",
+    "unit": "1 จาน",
+    "typeId": 3,
+    "type": "หมู",
+    "calorie": 480,
+    "isIslamic": false
+  },
+  {
+    "id": 22,
+    "name": "ข้าวเหนียวหมูสวรรค์",
+    "unit": "1 จาน",
+    "typeId": 3,
+    "type": "หมู",
+    "calorie": 385,
+    "isIslamic": false
+  },
+  {
+    "id": 23,
+    "name": "โจ๊กหมู",
+    "unit": "1 ถ้วย",
+    "typeId": 3,
+    "type": "หมู",
+    "calorie": 230,
+    "isIslamic": false
+  },
+  {
+    "id": 24,
+    "name": "ข้าวผัดหมูน้ำพริกเผา",
+    "unit": "1 จาน",
+    "typeId": 3,
+    "type": "หมู",
+    "calorie": 370,
+    "isIslamic": false
+  },
+  {
+    "id": 25,
+    "name": "ข้าวผัดหมูใส่ไข่",
+    "unit": "1 จาน",
+    "typeId": 3,
+    "type": "หมู",
+    "calorie": 665,
+    "isIslamic": false
+  },
+  {
+    "id": 26,
+    "name": "ข้าวผัดหมู",
+    "unit": "1 จาน",
+    "typeId": 3,
+    "type": "หมู",
+    "calorie": 561,
+    "isIslamic": false
+  },
+  {
+    "id": 27,
+    "name": "ข้าวผัดคะน้าหมูกรอบ",
+    "unit": "1 จาน",
+    "typeId": 3,
+    "type": "หมู",
+    "calorie": 670,
+    "isIslamic": false
+  },
+  {
+    "id": 28,
+    "name": "ข้าวผัดผักกระเฉดหมูกรอบ",
+    "unit": "1 จาน",
+    "typeId": 3,
+    "type": "หมู",
+    "calorie": 610,
+    "isIslamic": false
+  }
+]
