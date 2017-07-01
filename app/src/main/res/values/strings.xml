@@ -1,3 +1,44 @@
 <resources>
-    <string name="app_name">Calapp</string>
+    <string name="app_name">Cal App</string>
+
+    <!-- Button -->
+    <string name="button_ok">ตกลง</string>
+    <string name="button_end">จบการทำงาน</string>
+
+    <!-- Title tool bar -->
+    <string name="title_toolbar_user_info">กรุณากรอกข้อมูล</string>
+    <string name="title_toolbar_food_and_drink_list">รายการอาหารและเครื่องดื่ม</string>
+    <string name="title_toolbar_food_and_drink">อาหารและเครื่องดื่ม</string>
+    <string name="title_toolbar_calculation_result">ผลการคำนวณ</string>
+
+    <!-- Select gender -->
+    <string name="select_gender">กรุณาเลือกเพศ</string>
+    <string name="select_gender_remark">หมายเหตุ การเลือกเพศมีผลต่อการคำนวณ</string>
+
+    <!-- User info -->
+    <string name="user_info_weight">น้ำหนัก</string>
+    <string name="user_info_height">ส่วนสูง</string>
+    <string name="user_info_age">อายุ</string>
+    <string name="user_info_religion">ศาสนา</string>
+    <string name="user_info_food_allergy">อาหารที่แพ้</string>
+    <string name="user_info_activity">ความหนักหน่วงของกิจกรรม</string>
+    <string name="user_info_exercise">พฤติกรรมการออกกำลังกาย</string>
+
+    <!-- Food and drink -->
+    <string name="food_and_drink_calorie">จำนวนแคลลอรี่รวม</string>
+    <string name="food_and_kg_calorie">กิโลแคลลอรี่</string>
+
+    <!-- Select food or drink -->
+    <string name="select_food_or_drink">กรุณาเลือกหมวดอาหาร</string>
+
+    <!-- Calculator result -->
+    <string name="calculator_result_age">อายุ %s</string>
+    <string name="calculator_result_weight">น้ำหนัก %s</string>
+    <string name="calculator_result_height">ส่วนสูง %s</string>
+    <string name="calculator_result_religion">ศาสนา %s</string>
+    <string name="calculator_result_bmr">พลังงานที่ร่างกายต้องการในแต่ละวัน (BMR) %s</string>
+    <string name="calculator_result_tdee">พลังงานที่ร่างกายสามารถใช้หมดได้ในแต่ละวัน (TDEE) %s</string>
+    <string name="calculator_result_used">แคลลอรี่รวมของอาหารและเครื่องดื่มที่ผู้ใช้รับประทานไป %s</string>
+    <string name="calculator_result_result">ผลลัพธ์ %s</string>
+
 </resources>
