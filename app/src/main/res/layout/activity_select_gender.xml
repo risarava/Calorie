@@ -30,20 +30,17 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/color_gray"
                 android:clickable="true"
-                android:minHeight="200dp"
-                android:onClick="womenButton" />
+                android:onClick="womenButton"
+                android:src="@drawable/img_femalecard2x" />
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/padding_small"
                 android:layout_weight="1"
-                android:background="@color/color_gray"
                 android:clickable="true"
-                android:minHeight="200dp"
-                android:onClick="menButton" />
+                android:onClick="menButton"
+                android:src="@drawable/img_malecard2x" />
         </LinearLayout>
 
         <TextView

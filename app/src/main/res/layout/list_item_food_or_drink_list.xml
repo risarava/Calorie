@@ -44,6 +44,6 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="@dimen/padding_small"
             android:padding="@dimen/padding_small"
-            android:src="@drawable/plus_1x" />
+            android:src="@drawable/img_plus2x" />
     </LinearLayout>
 </LinearLayout>

@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|start"
             android:padding="@dimen/padding_small"
-            android:src="@drawable/img_iph_nav_back2x"
+            android:src="@drawable/img_back2x"
             android:visibility="visible" />
 
         <RelativeLayout

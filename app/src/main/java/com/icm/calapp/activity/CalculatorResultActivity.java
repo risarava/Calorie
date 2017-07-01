@@ -8,11 +8,10 @@ import android.widget.TextView;
 import com.icm.calapp.R;
 import com.icm.calapp.custom.AbstractAppCompatActivity;
 
-public class FoodDrinkListActivity extends AbstractAppCompatActivity {
-
+public class CalculatorResultActivity extends AbstractAppCompatActivity {
     @Override
     protected int setContentView() {
-        return R.layout.activity_food_drink_list;
+        return R.layout.activity_calculatetor_result;
     }
 
     @Override
@@ -23,7 +22,6 @@ public class FoodDrinkListActivity extends AbstractAppCompatActivity {
     @Override
     protected void bindUI(Bundle savedInstanceState) {
 
-        setTitle(R.string.title_toolbar_food_and_drink);
     }
 
     @Override
