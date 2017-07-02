@@ -9,7 +9,11 @@ public class UserInfoObject extends RealmObject {
     private int height;
     private int age;
     private int religion;
-    private int foodAllergy;
+    private boolean isPork;
+    private boolean isChicken;
+    private boolean isShrimp;
+    private boolean isCrab;
+    private boolean isMilk;
     private int activity;
     private int exercise;
 
@@ -53,14 +57,6 @@ public class UserInfoObject extends RealmObject {
         this.religion = religion;
     }
 
-    public int getFoodAllergy() {
-        return foodAllergy;
-    }
-
-    public void setFoodAllergy(int foodAllergy) {
-        this.foodAllergy = foodAllergy;
-    }
-
     public int getActivity() {
         return activity;
     }
@@ -75,5 +71,45 @@ public class UserInfoObject extends RealmObject {
 
     public void setExercise(int exercise) {
         this.exercise = exercise;
+    }
+
+    public boolean isPork() {
+        return isPork;
+    }
+
+    public void setPork(boolean pork) {
+        isPork = pork;
+    }
+
+    public boolean isChicken() {
+        return isChicken;
+    }
+
+    public void setChicken(boolean chicken) {
+        isChicken = chicken;
+    }
+
+    public boolean isShrimp() {
+        return isShrimp;
+    }
+
+    public void setShrimp(boolean shrimp) {
+        isShrimp = shrimp;
+    }
+
+    public boolean isCrab() {
+        return isCrab;
+    }
+
+    public void setCrab(boolean crab) {
+        isCrab = crab;
+    }
+
+    public boolean isMilk() {
+        return isMilk;
+    }
+
+    public void setMilk(boolean milk) {
+        isMilk = milk;
     }
 }

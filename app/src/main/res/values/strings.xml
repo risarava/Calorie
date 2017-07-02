@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Cal App</string>
     <string name="error_not_found">ไม่พบรายการ</string>
+    <string name="error_fill_text">This field is require</string>
+    <string name="error_selected">please selected</string>
+
     <!-- Button -->
     <string name="button_ok">ตกลง</string>
     <string name="button_end">จบการทำงาน</string>
@@ -26,9 +29,14 @@
     <string name="user_info_food_allergy">อาหารที่แพ้</string>
     <string name="user_info_activity">ความหนักหน่วงของกิจกรรม</string>
     <string name="user_info_exercise">พฤติกรรมการออกกำลังกาย</string>
+    <string name="user_info_pork">หมู</string>
+    <string name="user_info_chicken">ไก่</string>
+    <string name="user_info_shrimp">กุ้ง</string>
+    <string name="user_info_crab">ปู</string>
+    <string name="user_info_milk">นม</string>
 
     <string-array name="religion_list">
-        <item>ศาสนา</item>
+        <item>เลือกศาสนา</item>
         <item>พุทธ</item>
         <item>อิสลาม</item>
     </string-array>
@@ -54,6 +62,8 @@
     <string name="food_and_drink_calorie">จำนวนแคลลอรี่รวม</string>
     <string name="food_and_drink_kg_calorie">กิโลแคลลอรี่</string>
     <string name="food_and_drink_calorie_per_unit" formatted="false">%d แคลลอรี่ ต่อ %s</string>
+    <string name="food_and_drink_category">เลือกหมวด</string>
+    <string name="food_and_drink_type">ประเภท</string>
 
     <string-array name="cateyory_list">
         <item>เลือกหมวด</item>

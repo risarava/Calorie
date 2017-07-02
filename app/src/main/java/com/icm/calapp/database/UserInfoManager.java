@@ -2,6 +2,8 @@ package com.icm.calapp.database;
 
 import com.icm.calapp.model.UserInfoObject;
 
+import java.util.ArrayList;
+
 import io.realm.Realm;
 import io.realm.RealmQuery;
 import io.realm.RealmResults;
@@ -15,15 +17,20 @@ public class UserInfoManager {
     }
 
     public void addUserInfo(final UserInfoObject userObject) {
+        deleteAll();
         realm.beginTransaction();
         UserInfoObject object = realm.createObject(UserInfoObject.class);
         object.setWeight(userObject.getWeight());
         object.setHeight(userObject.getHeight());
         object.setAge(userObject.getAge());
         object.setReligion(userObject.getReligion());
-        object.setFoodAllergy(userObject.getFoodAllergy());
         object.setActivity(userObject.getActivity());
         object.setExercise(userObject.getExercise());
+        object.setPork(userObject.isPork());
+        object.setChicken(userObject.isChicken());
+        object.setShrimp(userObject.isShrimp());
+        object.setCrab(userObject.isCrab());
+        object.setMilk(userObject.isMilk());
 
         realm.commitTransaction();
     }
@@ -43,10 +50,12 @@ public class UserInfoManager {
         });
     }
 
-    public RealmResults<UserInfoObject> queryAll() {
+    public ArrayList<UserInfoObject> queryAll() {
         RealmQuery<UserInfoObject> query = realm.where(UserInfoObject.class);
         RealmResults<UserInfoObject> result = query
                 .findAll();
-        return result;
+        ArrayList<UserInfoObject> userInfoArrayList = new ArrayList<>();
+        userInfoArrayList.addAll(result);
+        return userInfoArrayList;
     }
 }

@@ -7,6 +7,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.icm.calapp.model.CategoryObject;
+
+import java.util.ArrayList;
+
 public class SpinnerCustom {
 
     public static void setSpinner(Activity activity, Spinner spinner, int arrayList) {
@@ -38,6 +42,35 @@ public class SpinnerCustom {
 
     }
 
+    public static void setSpinner(Activity activity, Spinner spinner, ArrayList<CategoryObject> categoryArrayList, String hint) {
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity, android.R.layout.simple_spinner_dropdown_item) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+
+                View v = super.getView(position, convertView, parent);
+                if (position == 0) {
+                    ((TextView) v.findViewById(android.R.id.text1)).setText("");
+                    ((TextView) v.findViewById(android.R.id.text1)).setHint(getItem(0)); //"Hint to be displayed"
+                }
+                return v;
+            }
+
+            @Override
+            public int getCount() {
+                return super.getCount(); // you don't display last item. It is used as hint.
+            }
+        };
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.add(hint);
+        for (CategoryObject item : categoryArrayList) {
+            adapter.add(item.getName());
+        }
+        spinner.setAdapter(adapter);
+        spinner.setSelection(1);
+
+    }
+
     public static void setSpinner(Activity activity, Spinner spinner, int arrayList, int selectedPosition) {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(activity, android.R.layout.simple_spinner_dropdown_item) {
             @Override
@@ -53,7 +86,7 @@ public class SpinnerCustom {
 
             @Override
             public int getCount() {
-                return super.getCount() -1; // you don't display last item. It is used as hint.
+                return super.getCount(); // you don't display last item. It is used as hint.
             }
         };
 
