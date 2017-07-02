@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Cal App</string>
+    <string name="error_not_found">ไม่พบรายการ</string>
+    <string name="error_fill_text">This field is require</string>
+    <string name="error_selected">please selected</string>
 
     <!-- Button -->
     <string name="button_ok">ตกลง</string>
@@ -10,6 +13,9 @@
     <string name="title_toolbar_food_and_drink_list">รายการอาหารและเครื่องดื่ม</string>
     <string name="title_toolbar_food_and_drink">อาหารและเครื่องดื่ม</string>
     <string name="title_toolbar_calculation_result">ผลการคำนวณ</string>
+
+    <!-- Dialog -->
+    <string name="dialog_delete">คุณแน่ใจที่จะลบรายการนี้ ?</string>
 
     <!-- Select gender -->
     <string name="select_gender">กรุณาเลือกเพศ</string>
@@ -23,22 +29,73 @@
     <string name="user_info_food_allergy">อาหารที่แพ้</string>
     <string name="user_info_activity">ความหนักหน่วงของกิจกรรม</string>
     <string name="user_info_exercise">พฤติกรรมการออกกำลังกาย</string>
+    <string name="user_info_pork">หมู</string>
+    <string name="user_info_chicken">ไก่</string>
+    <string name="user_info_shrimp">กุ้ง</string>
+    <string name="user_info_crab">ปู</string>
+    <string name="user_info_milk">นม</string>
+
+    <string-array name="religion_list">
+        <item>เลือกศาสนา</item>
+        <item>พุทธ</item>
+        <item>อิสลาม</item>
+    </string-array>
+
+    <string-array name="activity_list">
+        <item>เลือก</item>
+        <item>เบา</item>
+        <item>ปานกลาง</item>
+        <item>หนัก</item>
+    </string-array>
+
+    <string-array name="exercise_list">
+        <item>เลือก</item>
+        <item>ไม่ได้ออกกำลังกายเลย</item>
+        <item>ประมาณอาทิตย์ละ 1-3 วัน</item>
+        <item>ประมาณอาทิตย์ละ 3-5 วัน</item>
+        <item>ประมาณอาทิตย์ละ 6-7 วัน</item>
+        <item>ทุกวันเช้าเย็น</item>
+
+    </string-array>
 
     <!-- Food and drink -->
     <string name="food_and_drink_calorie">จำนวนแคลลอรี่รวม</string>
-    <string name="food_and_kg_calorie">กิโลแคลลอรี่</string>
+    <string name="food_and_drink_kg_calorie">กิโลแคลลอรี่</string>
+    <string name="food_and_drink_calorie_per_unit" formatted="false">%d แคลลอรี่ ต่อ %s</string>
+    <string name="food_and_drink_category">เลือกหมวด</string>
+    <string name="food_and_drink_type">ประเภท</string>
 
-    <!-- Select food or drink -->
-    <string name="select_food_or_drink">กรุณาเลือกหมวดอาหาร</string>
+    <string-array name="cateyory_list">
+        <item>เลือกหมวด</item>
+        <item>อาหาร</item>
+        <item>เครื่องดื่ม</item>
+    </string-array>
+
+    <string-array name="type_of_food_list">
+        <item>ประเภท</item>
+        <item>ทั้งหมด</item>
+        <item>ไก่</item>
+        <item>กุ้ง</item>
+        <item>หมู</item>
+        <item>ปู</item>
+    </string-array>
+
+    <string-array name="type_of_drink_list">
+        <item>ประเภท</item>
+        <item>ทั้งหมด</item>
+        <item>น้ำ</item>
+        <item>โยเกิร์ต</item>
+        <item>นม</item>
+    </string-array>
 
     <!-- Calculator result -->
     <string name="calculator_result_age">อายุ %s</string>
     <string name="calculator_result_weight">น้ำหนัก %s</string>
     <string name="calculator_result_height">ส่วนสูง %s</string>
     <string name="calculator_result_religion">ศาสนา %s</string>
-    <string name="calculator_result_bmr">พลังงานที่ร่างกายต้องการในแต่ละวัน (BMR) %s</string>
-    <string name="calculator_result_tdee">พลังงานที่ร่างกายสามารถใช้หมดได้ในแต่ละวัน (TDEE) %s</string>
-    <string name="calculator_result_used">แคลลอรี่รวมของอาหารและเครื่องดื่มที่ผู้ใช้รับประทานไป %s</string>
-    <string name="calculator_result_result">ผลลัพธ์ %s</string>
+    <string name="calculator_result_bmr">พลังงานที่ร่างกายต้องการในแต่ละวัน (BMR) : %s</string>
+    <string name="calculator_result_tdee">พลังงานที่ร่างกายสามารถใช้หมดได้ในแต่ละวัน (TDEE) : %s</string>
+    <string name="calculator_result_used">แคลลอรี่รวมของอาหารและเครื่องดื่มที่ผู้ใช้รับประทานไป : %s</string>
+    <string name="calculator_result_result">ผลลัพธ์ : %s</string>
 
 </resources>

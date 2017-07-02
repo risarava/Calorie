@@ -1,0 +1,200 @@
+[
+  {
+    "id": 0,
+    "name": "มินิเมท พัลพิ องุ่นขาว",
+    "unit": "1 ขวด",
+    "typeId": 5,
+    "type": "น้ำ",
+    "calorie": 140,
+    "isIslamic": true
+  },
+  {
+    "id": 1,
+    "name": "Zummer น้ำว่านหางจรเข้",
+    "unit": "1 ขวด",
+    "typeId": 5,
+    "type": "น้ำ",
+    "calorie": 160,
+    "isIslamic": true
+  },
+  {
+    "id": 2,
+    "name": "Beauty Drink",
+    "unit": "1 ขวด",
+    "typeId": 5,
+    "type": "น้ำ",
+    "calorie": 40,
+    "isIslamic": true
+  },
+  {
+    "id": 3,
+    "name": "Man some",
+    "unit": "1 ขวด",
+    "typeId": 5,
+    "type": "น้ำ",
+    "calorie": 200,
+    "isIslamic": true
+  },
+  {
+    "id": 4,
+    "name": "Blink",
+    "unit": "1 ขวด",
+    "typeId": 5,
+    "type": "น้ำ",
+    "calorie": 90,
+    "isIslamic": true
+  },
+  {
+    "id": 5,
+    "name": "มาลี น้ำมะเขือเทศ",
+    "unit": "1 กล่อง",
+    "typeId": 5,
+    "type": "น้ำ",
+    "calorie": 50,
+    "isIslamic": true
+  },
+  {
+    "id": 6,
+    "name": "คาโกเมะ มะเขือเทศ",
+    "unit": "1 กล่อง",
+    "typeId": 5,
+    "type": "น้ำ",
+    "calorie": 50,
+    "isIslamic": true
+  },
+  {
+    "id": 7,
+    "name": "ดอยคำ น้ำมะเขือเทศ",
+    "unit": "1 กล่อง",
+    "typeId": 5,
+    "type": "น้ำ",
+    "calorie": 40,
+    "isIslamic": true
+  },
+  {
+    "id": 8,
+    "name": "ยูนีฟ แครอท 100%",
+    "unit": "1 กล่อง",
+    "typeId": 5,
+    "type": "น้ำ",
+    "calorie": 50,
+    "isIslamic": true
+  },
+  {
+    "id": 9,
+    "name": "ดัชชี่ออริจินัล",
+    "unit": "1 ถ้วย",
+    "typeId": 6,
+    "type": "โยเกิร์ต",
+    "calorie": 130,
+    "isIslamic": true
+  },
+  {
+    "id": 10,
+    "name": "ดัชชี่ Fat 100%",
+    "unit": "1 ถ้วย",
+    "typeId": 6,
+    "type": "โยเกิร์ต",
+    "calorie": 80,
+    "isIslamic": true
+  },
+  {
+    "id": 11,
+    "name": "ดัชชี่สตอเบอร์รี่",
+    "unit": "1 ถ้วย",
+    "typeId": 6,
+    "type": "โยเกิร์ต",
+    "calorie": 150,
+    "isIslamic": true
+  },
+  {
+    "id": 12,
+    "name": "เมจิ Low fat",
+    "unit": "1 ถ้วย",
+    "typeId": 6,
+    "type": "โยเกิร์ต",
+    "calorie": 120,
+    "isIslamic": true
+  },
+  {
+    "id": 13,
+    "name": "เมจิบัลแกเรีย สีน้ำเงิน",
+    "unit": "1 ถ้วย",
+    "typeId": 6,
+    "type": "โยเกิร์ต",
+    "calorie": 60,
+    "isIslamic": true
+  },
+  {
+    "id": 14,
+    "name": "ดัชชี่ไบโอ",
+    "unit": "1 ถ้วย",
+    "typeId": 6,
+    "type": "โยเกิร์ต",
+    "calorie": 120,
+    "isIslamic": true
+  },
+  {
+    "id": 15,
+    "name": "แอคทีเวีย Light & Fit",
+    "unit": "1 ถ้วย",
+    "typeId": 6,
+    "type": "โยเกิร์ต",
+    "calorie": 50,
+    "isIslamic": true
+  },
+  {
+    "id": 16,
+    "name": "แอคทีเวีย Pop’n",
+    "unit": "1 ถ้วย",
+    "typeId": 6,
+    "type": "โยเกิร์ต",
+    "calorie": 80,
+    "isIslamic": true
+  },
+  {
+    "id": 17,
+    "name": "แอคทีเวีย Pudding",
+    "unit": "1 ถ้วย",
+    "typeId": 6,
+    "type": "โยเกิร์ต",
+    "calorie": 90,
+    "isIslamic": true
+  },
+  {
+    "id": 18,
+    "name": "ดัชมิลล์ 4 in 1 (เบอร์รี่รวม)",
+    "unit": "1 ขวด",
+    "typeId": 7,
+    "type": "นม",
+    "calorie": 130,
+    "isIslamic": true
+  },
+  {
+    "id": 19,
+    "name": "แลคตาซอย สูตรเจ",
+    "unit": "1 ขวด",
+    "typeId": 7,
+    "type": "นม",
+    "calorie": 200,
+    "isIslamic": true
+  },
+  {
+    "id": 20,
+    "name": "ไวตามิลล์ (ออริจินัล)",
+    "unit": "1 กล่อง",
+    "typeId": 7,
+    "type": "นม",
+    "calorie": 260,
+    "isIslamic": true
+  },
+  {
+    "id": 21,
+    "name": "แลคตาซอย (ออริจินัล)",
+    "unit": "1 ขวด",
+    "typeId": 7,
+    "type": "นม",
+    "calorie": 120,
+    "isIslamic": true
+  }
+]
