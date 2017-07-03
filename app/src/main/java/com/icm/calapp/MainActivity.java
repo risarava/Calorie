@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.icm.calapp.activity.CalculatorResultActivity;
 import com.icm.calapp.activity.FoodDrinkAllActivity;
@@ -17,6 +18,7 @@ import com.icm.calapp.custom.MyAlertDialog;
 import com.icm.calapp.database.FoodAndDrinkManager;
 
 public class MainActivity extends AbstractAppCompatActivity {
+    public static final String EXTRA_CALORIE = "CALORIE";
 
     private RecyclerView recyclerView;
     private TextView txtNotFound;
@@ -80,8 +82,13 @@ public class MainActivity extends AbstractAppCompatActivity {
     }
 
     public void okButton(View view) {
-        Intent intent = new Intent(activity, CalculatorResultActivity.class);
-        startActivity(intent);
+        if (adapter.getCalorie() != 0) {
+            Intent intent = new Intent(activity, CalculatorResultActivity.class);
+            intent.putExtra(EXTRA_CALORIE, adapter.getCalorie());
+            startActivity(intent);
+        } else {
+            Toast.makeText(activity, "กรุณาเพิ่มรายการอาหาร", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void initRecycleView() {

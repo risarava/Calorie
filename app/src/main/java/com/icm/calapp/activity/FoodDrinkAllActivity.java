@@ -157,7 +157,7 @@ public class FoodDrinkAllActivity extends AbstractAppCompatActivity {
                 }
             } else if (object.getId() == 3) {
                 if (userInfoObject.isPork()) {
-                    if (userInfoObject.getReligion() == 1) {
+                    if (userInfoObject.getReligionId() == 1) {
                         foodTypeList.add(new CategoryObject(object.getId(), object.getName()));
                     }
                 }

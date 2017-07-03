@@ -24,7 +24,6 @@ import com.icm.calapp.model.DrinkObject;
 import com.icm.calapp.model.FoodObject;
 import com.icm.calapp.model.UserInfoObject;
 
-import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class UserInfoActivity extends AbstractAppCompatActivity implements View.OnClickListener {
@@ -92,6 +91,7 @@ public class UserInfoActivity extends AbstractAppCompatActivity implements View.
         userInfoManager = new UserInfoManager();
 
         foodAndDrinkManager.deleteAll();
+        userInfoManager.deleteAll();
         gender = getIntent().getIntExtra(SelectGenderActivity.EXTRA_GENDER, 0);
     }
 
@@ -231,7 +231,7 @@ public class UserInfoActivity extends AbstractAppCompatActivity implements View.
                 height = Integer.parseInt(heightStr);
                 age = Integer.parseInt(ageStr);
 
-            } catch (Exception e) {
+            } catch (Exception ignored) {
 
             }
             UserInfoObject userInfoObject = new UserInfoObject();
@@ -239,7 +239,8 @@ public class UserInfoActivity extends AbstractAppCompatActivity implements View.
             userInfoObject.setWeight(weight);
             userInfoObject.setHeight(height);
             userInfoObject.setAge(age);
-            userInfoObject.setReligion(spnReligion.getSelectedItemPosition());
+            userInfoObject.setReligionId(spnReligion.getSelectedItemPosition());
+            userInfoObject.setReligionName(spnReligion.getSelectedItem().toString());
             userInfoObject.setPork(!lloPork.isSelected());
             userInfoObject.setChicken(!lloChicken.isSelected());
             userInfoObject.setShrimp(!lloShrimp.isSelected());

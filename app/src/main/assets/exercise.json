@@ -1,0 +1,130 @@
+[
+  {
+    "id": 0,
+    "name": "กระโดดเชือก",
+    "levelId": 2,
+    "levelName": "ปานกลาง",
+    "caloriePerHour": 780,
+    "caloriePerMin": 13
+  },
+  {
+    "id": 1,
+    "name": "ว่ายน้ำ",
+    "levelId": 3,
+    "levelName": "หนัก",
+    "caloriePerHour": 800,
+    "caloriePerMin": 13
+  },
+  {
+    "id": 2,
+    "name": "วิ่ง",
+    "levelId": 3,
+    "levelName": "หนัก",
+    "caloriePerHour": 550,
+    "caloriePerMin": 9
+  },
+  {
+    "id": 3,
+    "name": "วิ่ง",
+    "levelId": 3,
+    "levelName": "หนัก",
+    "caloriePerHour": 550,
+    "caloriePerMin": 9
+  },
+  {
+    "id": 4,
+    "name": "ปั่นจักรยาน",
+    "levelId": 2,
+    "levelName": "ปานกลาง",
+    "caloriePerHour": 850,
+    "caloriePerMin": 14
+  },
+  {
+    "id": 5,
+    "name": "เล่นฟุตบอล",
+    "levelId": 3,
+    "levelName": "หนัก",
+    "caloriePerHour": 400,
+    "caloriePerMin": 6
+  },
+  {
+    "id": 6,
+    "name": "เล่นฮูล่าฮูป",
+    "levelId": 3,
+    "levelName": "หนัก",
+    "caloriePerHour": 430,
+    "caloriePerMin": 7
+  },
+  {
+    "id": 7,
+    "name": "เล่นแบดมินตัน",
+    "levelId": 1,
+    "levelName": "เบา",
+    "caloriePerHour": 350,
+    "caloriePerMin": 6
+  },
+  {
+    "id": 8,
+    "name": "เต้นแอโรบิค",
+    "levelId": 3,
+    "levelName": "หนัก",
+    "caloriePerHour": 600,
+    "caloriePerMin": 10
+  },
+  {
+    "id": 9,
+    "name": "เดินธรรมดา",
+    "levelId": 1,
+    "levelName": "เบา",
+    "caloriePerHour": 300,
+    "caloriePerMin": 5
+  },
+  {
+    "id": 10,
+    "name": "เล่นเทนนิส",
+    "levelId": 2,
+    "levelName": "ปานกลาง",
+    "caloriePerHour": 480,
+    "caloriePerMin": 8
+  },
+  {
+    "id": 11,
+    "name": "เล่นวอลเลย์บอล",
+    "levelId": 2,
+    "levelName": "ปานกลาง",
+    "caloriePerHour": 300,
+    "caloriePerMin": 5
+  },
+  {
+    "id": 12,
+    "name": "เล่นโบว์ลิ่ง",
+    "levelId": 1,
+    "levelName": "เบา",
+    "caloriePerHour": 400,
+    "caloriePerMin": 6
+  },
+  {
+    "id": 13,
+    "name": "เล่นสเก็ต",
+    "levelId": 1,
+    "levelName": "เบา",
+    "caloriePerHour": 420,
+    "caloriePerMin": 7
+  },
+  {
+    "id": 14,
+    "name": "โยคะ",
+    "levelId": 1,
+    "levelName": "เบา",
+    "caloriePerHour": 550,
+    "caloriePerMin": 9
+  },
+  {
+    "id": 15,
+    "name": "ตีกอล์ฟ",
+    "levelId": 1,
+    "levelName": "เบา",
+    "caloriePerHour": 360,
+    "caloriePerMin": 6
+  }
+]

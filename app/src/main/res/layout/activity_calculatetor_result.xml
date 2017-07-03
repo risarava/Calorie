@@ -26,6 +26,7 @@
                 android:padding="@dimen/padding_normal">
 
                 <ImageView
+                    android:id="@+id/imageviewIconGender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/img_female" />
@@ -37,6 +38,7 @@
                     android:padding="@dimen/padding_small">
 
                     <TextView
+                        android:id="@+id/textviewAge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/user_info_age"
@@ -44,6 +46,7 @@
                         android:textSize="@dimen/text_normal" />
 
                     <TextView
+                        android:id="@+id/textviewWeight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/user_info_weight"
@@ -51,6 +54,7 @@
                         android:textSize="@dimen/text_normal" />
 
                     <TextView
+                        android:id="@+id/textviewHeight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/user_info_height"
@@ -58,6 +62,7 @@
                         android:textSize="@dimen/text_normal" />
 
                     <TextView
+                        android:id="@+id/textviewReligion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/user_info_religion"
@@ -74,6 +79,7 @@
                 android:padding="@dimen/padding_normal">
 
                 <TextView
+                    android:id="@+id/textviewBMR"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/padding_mini"
@@ -81,6 +87,7 @@
                     android:textSize="@dimen/text_small" />
 
                 <TextView
+                    android:id="@+id/textviewTDEE"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/padding_mini"
@@ -88,13 +95,15 @@
                     android:textSize="@dimen/text_small" />
 
                 <TextView
+                    android:id="@+id/textviewCalorie"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/padding_mini"
-                    android:text="@string/calculator_result_used"
+                    android:text="@string/calculator_result_calorie"
                     android:textSize="@dimen/text_small" />
 
                 <TextView
+                    android:id="@+id/textveiwResult"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/padding_mini"
@@ -106,6 +115,18 @@
         </LinearLayout>
 
     </ScrollView>
+
+    <TextView
+        android:id="@+id/textviewRecommend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_yellow_dark"
+        android:clickable="true"
+        android:gravity="center"
+        android:padding="@dimen/padding_small"
+        android:text="@string/button_recommend_food"
+        android:textColor="@color/color_text_black"
+        android:textSize="@dimen/text_normal" />
 
     <TextView
         android:layout_width="match_parent"

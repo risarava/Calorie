@@ -7,12 +7,16 @@
     <!-- Button -->
     <string name="button_ok">ตกลง</string>
     <string name="button_end">จบการทำงาน</string>
+    <string name="button_recommend_food">แนะนำวิธีการับประทานอาหาร</string>
+    <string name="button_recommend_exercise">แนะนำวิธีการออกกำลังกาย</string>
 
     <!-- Title tool bar -->
     <string name="title_toolbar_user_info">กรุณากรอกข้อมูล</string>
     <string name="title_toolbar_food_and_drink_list">รายการอาหารและเครื่องดื่ม</string>
     <string name="title_toolbar_food_and_drink">อาหารและเครื่องดื่ม</string>
     <string name="title_toolbar_calculation_result">ผลการคำนวณ</string>
+    <string name="title_toolbar_exercise">รายการกิจกรรม</string>
+    <string name="title_toolbar_exercise_all">กิจกรรม</string>
 
     <!-- Dialog -->
     <string name="dialog_delete">คุณแน่ใจที่จะลบรายการนี้ ?</string>
@@ -89,13 +93,19 @@
     </string-array>
 
     <!-- Calculator result -->
-    <string name="calculator_result_age">อายุ %s</string>
-    <string name="calculator_result_weight">น้ำหนัก %s</string>
-    <string name="calculator_result_height">ส่วนสูง %s</string>
+    <string name="calculator_result_age">อายุ %d</string>
+    <string name="calculator_result_weight">น้ำหนัก %d</string>
+    <string name="calculator_result_height">ส่วนสูง %d</string>
     <string name="calculator_result_religion">ศาสนา %s</string>
-    <string name="calculator_result_bmr">พลังงานที่ร่างกายต้องการในแต่ละวัน (BMR) : %s</string>
-    <string name="calculator_result_tdee">พลังงานที่ร่างกายสามารถใช้หมดได้ในแต่ละวัน (TDEE) : %s</string>
-    <string name="calculator_result_used">แคลลอรี่รวมของอาหารและเครื่องดื่มที่ผู้ใช้รับประทานไป : %s</string>
+    <string name="calculator_result_bmr">พลังงานที่ร่างกายต้องการในแต่ละวัน (BMR) : %,.2f</string>
+    <string name="calculator_result_tdee">พลังงานที่ร่างกายสามารถใช้หมดได้ในแต่ละวัน (TDEE) : %,.2f</string>
+    <string name="calculator_result_calorie">แคลลอรี่รวมของอาหารและเครื่องดื่มที่ผู้ใช้รับประทานไป : %d</string>
     <string name="calculator_result_result">ผลลัพธ์ : %s</string>
+    
+    <!-- Recommend exercise -->
+    <string name="exercise_selected">จำนวนกิจกรรมที่เลือก %d กิจกรรม</string>
+    <string name="exercise_need_used">จำนวนแคลลอรี่ที่ต้องเผาผลาญ %d กิโลแคลลอรี่</string>
+    <string name="exercise_calorie_per_hour">เผาผลาญ %d แคลลอรี่ ต่อ 1 ชั่วโมง</string>
+    <string name="exercise_heavyness">ความหนักหน่วงของกิจกรรม</string>
 
 </resources>

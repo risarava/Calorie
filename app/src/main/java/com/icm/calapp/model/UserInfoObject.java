@@ -8,7 +8,8 @@ public class UserInfoObject extends RealmObject {
     private int weight;
     private int height;
     private int age;
-    private int religion;
+    private int religionId;
+    private String religionName;
     private boolean isPork;
     private boolean isChicken;
     private boolean isShrimp;
@@ -16,6 +17,14 @@ public class UserInfoObject extends RealmObject {
     private boolean isMilk;
     private int activity;
     private int exercise;
+
+    public String getReligionName() {
+        return religionName;
+    }
+
+    public void setReligionName(String religionName) {
+        this.religionName = religionName;
+    }
 
     public int getGender() {
         return gender;
@@ -49,12 +58,12 @@ public class UserInfoObject extends RealmObject {
         this.age = age;
     }
 
-    public int getReligion() {
-        return religion;
+    public int getReligionId() {
+        return religionId;
     }
 
-    public void setReligion(int religion) {
-        this.religion = religion;
+    public void setReligionId(int religionId) {
+        this.religionId = religionId;
     }
 
     public int getActivity() {
