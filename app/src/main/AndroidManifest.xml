@@ -40,6 +40,12 @@
         <activity
             android:name=".activity.ExerciseActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.RecommendExerciseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.RecommendFoodActivity"
+            android:screenOrientation="portrait" />
 
     </application>
 

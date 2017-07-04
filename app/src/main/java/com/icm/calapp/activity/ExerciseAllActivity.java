@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -14,6 +16,7 @@ import com.icm.calapp.R;
 import com.icm.calapp.adapter.ExerciseAllAdapter;
 import com.icm.calapp.custom.AbstractAppCompatActivity;
 import com.icm.calapp.custom.ConvertJSON;
+import com.icm.calapp.custom.SpinnerCustom;
 import com.icm.calapp.database.ExerciseManager;
 import com.icm.calapp.model.ExerciseObject;
 
@@ -21,7 +24,9 @@ import java.util.ArrayList;
 
 public class ExerciseAllActivity extends AbstractAppCompatActivity {
 
+    private ArrayList<ExerciseObject> exerciseArrayList = new ArrayList<>();
     private RecyclerView recyclerView;
+    private Spinner spnHeavy;
 
     private LinearLayoutManager linearLayoutManager;
     private ExerciseAllAdapter adapter;
@@ -41,6 +46,7 @@ public class ExerciseAllActivity extends AbstractAppCompatActivity {
     protected void bindUI(Bundle savedInstanceState) {
         setTitle(R.string.title_toolbar_exercise_all);
         recyclerView = (RecyclerView) findViewById(R.id.recycleView);
+        spnHeavy = (Spinner) findViewById(R.id.spinnerHeavyness);
 
         exerciseManager = new ExerciseManager();
 
@@ -48,16 +54,21 @@ public class ExerciseAllActivity extends AbstractAppCompatActivity {
 
     @Override
     protected void setupUI() {
-        onBackPressedButtonLeft();
 
         initRecycleView();
 
         //load food from json file
-        ArrayList<ExerciseObject> exerciseArrayList = new Gson().fromJson(ConvertJSON.loadJSONFromAsset(getApplicationContext()
+        exerciseArrayList = new Gson().fromJson(ConvertJSON.loadJSONFromAsset(getApplicationContext()
                 , "exercise.json"), new TypeToken<ArrayList<ExerciseObject>>() {
         }.getType());
 
         adapter.setExerciseArrayList(exerciseArrayList);
+
+        setSpinner();
+    }
+
+    public void cancelButton(View view) {
+        onBackPressed();
     }
 
     private void initRecycleView() {
@@ -76,6 +87,30 @@ public class ExerciseAllActivity extends AbstractAppCompatActivity {
                         object.getLevelId(), object.getLevelName(),
                         object.getCaloriePerHour(), object.getCaloriePerMin()));
                 onBackPressed();
+            }
+        });
+    }
+
+    private void setSpinner() {
+        SpinnerCustom.setSpinner(activity, spnHeavy, R.array.heavyness_list, 0);
+
+        spnHeavy.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        adapter.setExerciseArrayList(exerciseArrayList);
+                        break;
+
+                    default:
+                        adapter.filterHeavyness(position, exerciseArrayList);
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
     }

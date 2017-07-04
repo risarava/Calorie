@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 import com.icm.calapp.R;
+import com.icm.calapp.custom.FontsOverride;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -17,6 +18,8 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FontsOverride.setDefaultFont(this, "MONOSPACE", "DB HELVETHAICA.TTF");
+
         setContentView(R.layout.activity_splash_screen);
         handler = new Handler();
 

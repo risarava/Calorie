@@ -134,9 +134,9 @@
         android:background="@color/color_black"
         android:clickable="true"
         android:gravity="center"
-        android:onClick="okButton"
+        android:onClick="endButton"
         android:padding="@dimen/padding_small"
-        android:text="@string/button_ok"
+        android:text="@string/button_end"
         android:textColor="@color/color_white"
         android:textSize="@dimen/text_normal" />
 </LinearLayout>

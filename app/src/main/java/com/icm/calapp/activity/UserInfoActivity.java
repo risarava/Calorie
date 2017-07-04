@@ -17,8 +17,10 @@ import com.icm.calapp.custom.AbstractAppCompatActivity;
 import com.icm.calapp.custom.ConvertJSON;
 import com.icm.calapp.custom.SpinnerCustom;
 import com.icm.calapp.database.DrinkManager;
+import com.icm.calapp.database.ExerciseManager;
 import com.icm.calapp.database.FoodAndDrinkManager;
 import com.icm.calapp.database.FoodManager;
+import com.icm.calapp.database.RecommendFoodManager;
 import com.icm.calapp.database.UserInfoManager;
 import com.icm.calapp.model.DrinkObject;
 import com.icm.calapp.model.FoodObject;
@@ -50,6 +52,8 @@ public class UserInfoActivity extends AbstractAppCompatActivity implements View.
     private DrinkManager drinkManager;
     private FoodAndDrinkManager foodAndDrinkManager;
     private UserInfoManager userInfoManager;
+    private ExerciseManager exerciseManager;
+    private RecommendFoodManager recommendFoodManager;
 
     @Override
     protected int setContentView() {
@@ -89,9 +93,13 @@ public class UserInfoActivity extends AbstractAppCompatActivity implements View.
         drinkManager = new DrinkManager();
         foodAndDrinkManager = new FoodAndDrinkManager();
         userInfoManager = new UserInfoManager();
+        exerciseManager = new ExerciseManager();
+        recommendFoodManager = new RecommendFoodManager();
 
         foodAndDrinkManager.deleteAll();
         userInfoManager.deleteAll();
+        exerciseManager.deleteAll();
+        recommendFoodManager.deleteAll();
         gender = getIntent().getIntExtra(SelectGenderActivity.EXTRA_GENDER, 0);
     }
 

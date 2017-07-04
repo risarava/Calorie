@@ -42,7 +42,8 @@
                     android:hint="0"
                     android:inputType="number"
                     android:maxLength="3"
-                    android:padding="@dimen/padding_small" />
+                    android:padding="@dimen/padding_small"
+                    android:textSize="@dimen/text_small" />
             </LinearLayout>
 
             <LinearLayout
@@ -67,7 +68,8 @@
                     android:hint="0"
                     android:inputType="number"
                     android:maxLength="3"
-                    android:padding="@dimen/padding_small" />
+                    android:padding="@dimen/padding_small"
+                    android:textSize="@dimen/text_small" />
             </LinearLayout>
 
             <LinearLayout
@@ -92,7 +94,8 @@
                     android:hint="0"
                     android:inputType="number"
                     android:maxLength="3"
-                    android:padding="@dimen/padding_small" />
+                    android:padding="@dimen/padding_small"
+                    android:textSize="@dimen/text_small" />
             </LinearLayout>
 
             <LinearLayout
@@ -123,7 +126,8 @@
                             android:id="@+id/edittextReligion"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_centerVertical="true" />
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/text_small" />
 
                         <Spinner
                             android:id="@+id/spinnerReligion"
@@ -284,7 +288,8 @@
                             android:id="@+id/edittextActivity"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_centerVertical="true" />
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/text_small" />
 
                         <Spinner
                             android:id="@+id/spinnerActivity"
@@ -320,7 +325,8 @@
                             android:id="@+id/edittextExercise"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
-                            android:layout_centerVertical="true" />
+                            android:layout_centerVertical="true"
+                            android:textSize="@dimen/text_small" />
 
                         <Spinner
                             android:id="@+id/spinnerExercise"

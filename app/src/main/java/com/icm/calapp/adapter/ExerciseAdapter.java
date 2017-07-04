@@ -91,11 +91,6 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.ViewHo
         notifyDataSetChanged();
     }
 
-    public void addArticleArrayList(ArrayList<ExerciseObject> foodAndDrinkArrayList) {
-        this.exerciseArrayList.addAll(foodAndDrinkArrayList);
-        notifyDataSetChanged();
-    }
-
     public ArrayList<ExerciseObject> getExerciseArrayList() {
         return this.exerciseArrayList;
     }

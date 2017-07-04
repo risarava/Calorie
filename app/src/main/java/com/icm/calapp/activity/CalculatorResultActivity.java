@@ -2,21 +2,22 @@ package com.icm.calapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.icm.calapp.MainActivity;
 import com.icm.calapp.R;
 import com.icm.calapp.custom.AbstractAppCompatActivity;
 import com.icm.calapp.custom.Calculator;
+import com.icm.calapp.custom.MyAlertDialog;
 import com.icm.calapp.database.UserInfoManager;
 import com.icm.calapp.model.UserInfoObject;
 
 import static com.icm.calapp.MainActivity.EXTRA_CALORIE;
 
-public class CalculatorResultActivity extends AbstractAppCompatActivity implements View.OnClickListener{
+public class CalculatorResultActivity extends AbstractAppCompatActivity implements View.OnClickListener {
 
     private int calorie = 0;
     private double bmr;
@@ -86,18 +87,25 @@ public class CalculatorResultActivity extends AbstractAppCompatActivity implemen
         txtBMR.setText(getString(R.string.calculator_result_bmr, bmr));
         tdee = Calculator.calculateTDEE(bmr, userInfoObject.getExercise());
         txtTDEE.setText(getString(R.string.calculator_result_tdee, tdee));
-        double part = calorie - tdee;
-//        if (part > (part + 100)) {
-//
-//        }
+
+        double part = (tdee - calorie);
+        String recommend = "";
+        if (part < -100) {
+            recommend = getResources().getString(R.string.button_recommend_exercise);
+            txtResult.setText(getString(R.string.calculator_result_result, getResources().getString(R.string.calculator_result_fat)));
+        } else if (part > 100) {
+            recommend = getResources().getString(R.string.button_recommend_food);
+            txtResult.setText(getString(R.string.calculator_result_result, getResources().getString(R.string.calculator_result_thin)));
+        } else {
+            txtRecommend.setVisibility(View.GONE);
+            txtResult.setText(getString(R.string.calculator_result_result, getResources().getString(R.string.calculator_result_slim)));
+        }
 
 //        String recommend = (part + 100 > 0) ?
 //                getResources().getString(R.string.button_recommend_food) :
 //                getResources().getString(R.string.button_recommend_food);
 
-        txtRecommend.setText(((calorie - tdee) > 0) ?
-                getResources().getString(R.string.button_recommend_exercise) :
-                getResources().getString(R.string.button_recommend_food));
+        txtRecommend.setText(recommend);
 
     }
 
@@ -114,14 +122,36 @@ public class CalculatorResultActivity extends AbstractAppCompatActivity implemen
 
     }
 
+    public void endButton(View view) {
+        endApp();
+    }
+
+    public void endApp() {
+        MyAlertDialog myAlertDialog = new MyAlertDialog(activity);
+        myAlertDialog.alertDialog(activity.getResources().getString(R.string.dialog_end),
+                new MyAlertDialog.OnClickListener() {
+                    @Override
+                    public void onClickOk() {
+                        ActivityCompat.finishAffinity(activity);
+                    }
+                });
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.textviewRecommend:
-                double part = (calorie - tdee);
-                Intent intent = new Intent(activity, ExerciseActivity.class);
-                intent.putExtra(EXTRA_CALORIE, part);
-                startActivity(intent);
+                double part = (tdee - calorie);
+                if (part < -100) {
+                    Intent intent = new Intent(activity, ExerciseActivity.class);
+                    intent.putExtra(EXTRA_CALORIE, part);
+                    startActivity(intent);
+                } else if (part > 100) {
+                    Intent intent = new Intent(activity, RecommendFoodActivity.class);
+                    intent.putExtra(EXTRA_CALORIE, part);
+                    startActivity(intent);
+                }
+
                 break;
             default:
                 break;

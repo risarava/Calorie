@@ -89,11 +89,6 @@ public class FoodAndDrinkAdapter extends RecyclerView.Adapter<FoodAndDrinkAdapte
         notifyDataSetChanged();
     }
 
-    public void addArticleArrayList(ArrayList<FoodAndDrinkObject> foodAndDrinkArrayList) {
-        this.foodAndDrinkArrayList.addAll(foodAndDrinkArrayList);
-        notifyDataSetChanged();
-    }
-
     public ArrayList<FoodAndDrinkObject> getFoodAndDrinkArrayList() {
         return this.foodAndDrinkArrayList;
     }

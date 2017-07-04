@@ -14,20 +14,22 @@ import com.icm.calapp.model.ExerciseObject;
 
 import java.util.ArrayList;
 
-public class ExerciseAllAdapter extends RecyclerView.Adapter<ExerciseAllAdapter.ViewHolder> {
+public class RecommendExerciseAdapter extends RecyclerView.Adapter<RecommendExerciseAdapter.ViewHolder> {
 
     private ArrayList<ExerciseObject> exerciseArrayList = new ArrayList<>();
+    private int calorie =0 ;
 
     private Activity activity;
     private OnItemClickListener onItemClickListener;
 
-    public ExerciseAllAdapter(Activity activity) {
+    public RecommendExerciseAdapter(Activity activity, int calorie) {
+        this.calorie = calorie;
         this.activity = activity;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_food_or_drink_list, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_recommend_exercise, parent, false);
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
@@ -37,9 +39,11 @@ public class ExerciseAllAdapter extends RecyclerView.Adapter<ExerciseAllAdapter.
         ExerciseObject exerciseObject = exerciseArrayList.get(position);
 
         holder.txtName.setText(exerciseObject.getName());
-        holder.txtCaloriePerUnit.setText(activity.getString(R.string.exercise_calorie_per_hour,
+        holder.txtCaloriePerHour.setText(activity.getString(R.string.exercise_calorie_per_hour,
                 exerciseObject.getCaloriePerHour()));
-//        holder.imgIcon.setImageResource(CategotyIcon.getIcon(exerciseObject.getTypeId()));
+
+        int minute = (calorie / exerciseArrayList.size()) / exerciseObject.getCaloriePerMin();
+        holder.txtRecommend.setText(activity.getString(R.string.exercise_recommend, minute));
 
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
@@ -53,15 +57,6 @@ public class ExerciseAllAdapter extends RecyclerView.Adapter<ExerciseAllAdapter.
         }
         holder.itemView.setLayoutParams(params);
 
-        holder.imgIconAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (onItemClickListener == null) {
-                    return;
-                }
-                onItemClickListener.onItemClick(view, position);
-            }
-        });
     }
 
     @Override
@@ -71,16 +66,16 @@ public class ExerciseAllAdapter extends RecyclerView.Adapter<ExerciseAllAdapter.
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView txtName;
-        private TextView txtCaloriePerUnit;
+        private TextView txtCaloriePerHour;
+        private TextView txtRecommend;
         private ImageView imgIcon;
-        private ImageView imgIconAdd;
 
         public ViewHolder(View v) {
             super(v);
             txtName = (TextView) v.findViewById(R.id.textviewName);
-            txtCaloriePerUnit = (TextView) v.findViewById(R.id.textviewCaloriePerUnit);
+            txtCaloriePerHour = (TextView) v.findViewById(R.id.textviewCaloriePerHour);
+            txtRecommend = (TextView) v.findViewById(R.id.textviewRecommend);
             imgIcon = (ImageView) v.findViewById(R.id.imageviewIcon);
-            imgIconAdd = (ImageView) v.findViewById(R.id.imageviewAdd);
         }
     }
 
@@ -91,17 +86,6 @@ public class ExerciseAllAdapter extends RecyclerView.Adapter<ExerciseAllAdapter.
 
     public ArrayList<ExerciseObject> getExerciseArrayList() {
         return this.exerciseArrayList;
-    }
-
-    public void filterHeavyness(int levelId, ArrayList<ExerciseObject> exerciseArrayList) {
-        ArrayList<ExerciseObject> arrayList = new ArrayList<>();
-        for (ExerciseObject object : exerciseArrayList) {
-            if (object.getLevelId() == levelId) {
-                arrayList.add(object);
-            }
-        }
-        this.exerciseArrayList = arrayList;
-        notifyDataSetChanged();
     }
 
     public interface OnItemClickListener {
