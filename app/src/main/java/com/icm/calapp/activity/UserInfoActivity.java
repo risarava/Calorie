@@ -17,14 +17,15 @@ import com.icm.calapp.custom.AbstractAppCompatActivity;
 import com.icm.calapp.custom.ConvertJSON;
 import com.icm.calapp.custom.SpinnerCustom;
 import com.icm.calapp.database.DrinkManager;
+import com.icm.calapp.database.ExerciseManager;
 import com.icm.calapp.database.FoodAndDrinkManager;
 import com.icm.calapp.database.FoodManager;
+import com.icm.calapp.database.RecommendFoodManager;
 import com.icm.calapp.database.UserInfoManager;
 import com.icm.calapp.model.DrinkObject;
 import com.icm.calapp.model.FoodObject;
 import com.icm.calapp.model.UserInfoObject;
 
-import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class UserInfoActivity extends AbstractAppCompatActivity implements View.OnClickListener {
@@ -51,6 +52,8 @@ public class UserInfoActivity extends AbstractAppCompatActivity implements View.
     private DrinkManager drinkManager;
     private FoodAndDrinkManager foodAndDrinkManager;
     private UserInfoManager userInfoManager;
+    private ExerciseManager exerciseManager;
+    private RecommendFoodManager recommendFoodManager;
 
     @Override
     protected int setContentView() {
@@ -90,8 +93,13 @@ public class UserInfoActivity extends AbstractAppCompatActivity implements View.
         drinkManager = new DrinkManager();
         foodAndDrinkManager = new FoodAndDrinkManager();
         userInfoManager = new UserInfoManager();
+        exerciseManager = new ExerciseManager();
+        recommendFoodManager = new RecommendFoodManager();
 
         foodAndDrinkManager.deleteAll();
+        userInfoManager.deleteAll();
+        exerciseManager.deleteAll();
+        recommendFoodManager.deleteAll();
         gender = getIntent().getIntExtra(SelectGenderActivity.EXTRA_GENDER, 0);
     }
 
@@ -231,7 +239,7 @@ public class UserInfoActivity extends AbstractAppCompatActivity implements View.
                 height = Integer.parseInt(heightStr);
                 age = Integer.parseInt(ageStr);
 
-            } catch (Exception e) {
+            } catch (Exception ignored) {
 
             }
             UserInfoObject userInfoObject = new UserInfoObject();
@@ -239,7 +247,8 @@ public class UserInfoActivity extends AbstractAppCompatActivity implements View.
             userInfoObject.setWeight(weight);
             userInfoObject.setHeight(height);
             userInfoObject.setAge(age);
-            userInfoObject.setReligion(spnReligion.getSelectedItemPosition());
+            userInfoObject.setReligionId(spnReligion.getSelectedItemPosition());
+            userInfoObject.setReligionName(spnReligion.getSelectedItem().toString());
             userInfoObject.setPork(!lloPork.isSelected());
             userInfoObject.setChicken(!lloChicken.isSelected());
             userInfoObject.setShrimp(!lloShrimp.isSelected());

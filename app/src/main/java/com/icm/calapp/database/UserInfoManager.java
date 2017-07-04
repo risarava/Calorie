@@ -17,13 +17,13 @@ public class UserInfoManager {
     }
 
     public void addUserInfo(final UserInfoObject userObject) {
-        deleteAll();
         realm.beginTransaction();
         UserInfoObject object = realm.createObject(UserInfoObject.class);
         object.setWeight(userObject.getWeight());
         object.setHeight(userObject.getHeight());
         object.setAge(userObject.getAge());
-        object.setReligion(userObject.getReligion());
+        object.setReligionId(userObject.getReligionId());
+        object.setReligionName(userObject.getReligionName());
         object.setActivity(userObject.getActivity());
         object.setExercise(userObject.getExercise());
         object.setPork(userObject.isPork());

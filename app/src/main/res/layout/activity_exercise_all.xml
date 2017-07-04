@@ -20,14 +20,14 @@
             android:background="@color/color_yellow_dark"
             android:padding="@dimen/padding_small">
 
-            <Spinner
-                android:id="@+id/spinnerCategory"
-                android:layout_width="0dp"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:text="@string/exercise_heavyness"
+                android:textSize="@dimen/text_small" />
 
             <Spinner
-                android:id="@+id/spinnerType"
+                android:id="@+id/spinnerHeavyness"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/padding_small"
@@ -53,5 +53,4 @@
         android:text="@string/button_cancel"
         android:textColor="@color/color_white"
         android:textSize="@dimen/text_normal" />
-
 </LinearLayout>

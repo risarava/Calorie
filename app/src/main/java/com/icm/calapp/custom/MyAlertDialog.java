@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.widget.TextView;
 
 public class MyAlertDialog extends AlertDialog {
 
@@ -20,6 +21,7 @@ public class MyAlertDialog extends AlertDialog {
     }
 
     public void alertDialog(String title, final OnClickListener onClickListener) {
+
         setTitle(title);
         setButton(BUTTON_POSITIVE, activity.getResources().getString(android.R.string.ok),
                 new DialogInterface.OnClickListener() {

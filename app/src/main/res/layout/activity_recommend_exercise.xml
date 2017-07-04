@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/mToolBar"
+        layout="@layout/tool_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textviewNotFound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:padding="@dimen/padding_small"
+                android:text="@string/error_not_found"
+                android:textSize="@dimen/text_small"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_yellow"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_mini">
+
+        <TextView
+            android:id="@+id/textviewSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/padding_small"
+            android:paddingRight="@dimen/padding_small"
+            android:text="จำนวนกิจกรรมที่เลือก 0 กิจกรรม"
+            android:textSize="@dimen/text_small" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_yellow_dark"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding_mini">
+
+        <TextView
+            android:id="@+id/textviewUsed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/padding_small"
+            android:paddingRight="@dimen/padding_small"
+            android:text="จำนวนแคลลอรี่ที่ต้องเผาผลาญ 0 กิโลแคลลอรี"
+            android:textSize="@dimen/text_small" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_black"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="endButton"
+        android:padding="@dimen/padding_small"
+        android:text="@string/button_end"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/text_normal" />
+
+</LinearLayout>

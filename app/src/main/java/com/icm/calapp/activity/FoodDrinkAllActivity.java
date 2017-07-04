@@ -20,11 +20,13 @@ import com.icm.calapp.custom.SpinnerCustom;
 import com.icm.calapp.database.DrinkManager;
 import com.icm.calapp.database.FoodAndDrinkManager;
 import com.icm.calapp.database.FoodManager;
+import com.icm.calapp.database.RecommendFoodManager;
 import com.icm.calapp.database.UserInfoManager;
 import com.icm.calapp.model.CategoryObject;
 import com.icm.calapp.model.DrinkObject;
 import com.icm.calapp.model.FoodAndDrinkObject;
 import com.icm.calapp.model.FoodObject;
+import com.icm.calapp.model.RecommendFoodObject;
 import com.icm.calapp.model.UserInfoObject;
 
 import java.util.ArrayList;
@@ -37,9 +39,12 @@ public class FoodDrinkAllActivity extends AbstractAppCompatActivity {
     public static final int TYPE_WATER = 5;
     public static final int TYPE_YOGURT = 6;
     public static final int TYPE_MILK = 7;
+    public static final String EXTRA_IS_RECOMMEND = "IS_RECOMMEND";
 
     private static final int CATEGORY_FOOD = 1;
     private static final int CATEGORY_DRINK = 2;
+
+    private boolean isRecommend = false;
 
     private RecyclerView recyclerView;
     private Spinner spnCategory;
@@ -51,6 +56,7 @@ public class FoodDrinkAllActivity extends AbstractAppCompatActivity {
     private DrinkManager drinkManager;
     private FoodAndDrinkManager foodAndDrinkManager;
     private UserInfoManager userInfoManager;
+    private RecommendFoodManager recommendFoodManager;
 
     @Override
     protected int setContentView() {
@@ -73,15 +79,21 @@ public class FoodDrinkAllActivity extends AbstractAppCompatActivity {
         drinkManager = new DrinkManager();
         foodAndDrinkManager = new FoodAndDrinkManager();
         userInfoManager = new UserInfoManager();
+        recommendFoodManager = new RecommendFoodManager();
+
+        isRecommend = getIntent().getBooleanExtra(EXTRA_IS_RECOMMEND, false);
 
     }
 
     @Override
     protected void setupUI() {
-        onBackPressedButtonLeft();
         initRecycleView();
 
         setSpinner();
+    }
+
+    public void cancelButton(View view) {
+        onBackPressed();
     }
 
     private void initRecycleView() {
@@ -95,11 +107,19 @@ public class FoodDrinkAllActivity extends AbstractAppCompatActivity {
             @Override
             public void onItemClick(View view, int position) {
                 FoodAndDrinkObject object = adapter.getFoodAndDrinkArrayList().get(position);
-                foodAndDrinkManager.addFoodOrDrink(new FoodAndDrinkObject(
-                        object.getId(), object.getName(),
-                        object.getUnit(), object.getTypeId(),
-                        object.getType(), object.getCalorie(),
-                        object.islamic()));
+                if (isRecommend) {
+                    recommendFoodManager.addRecommendFood(new RecommendFoodObject(
+                            object.getId(), object.getName(),
+                            object.getUnit(), object.getTypeId(),
+                            object.getType(), object.getCalorie(),
+                            object.islamic()));
+                } else {
+                    foodAndDrinkManager.addFoodOrDrink(new FoodAndDrinkObject(
+                            object.getId(), object.getName(),
+                            object.getUnit(), object.getTypeId(),
+                            object.getType(), object.getCalorie(),
+                            object.islamic()));
+                }
                 onBackPressed();
             }
         });
@@ -157,7 +177,7 @@ public class FoodDrinkAllActivity extends AbstractAppCompatActivity {
                 }
             } else if (object.getId() == 3) {
                 if (userInfoObject.isPork()) {
-                    if (userInfoObject.getReligion() == 1) {
+                    if (userInfoObject.getReligionId() == 1) {
                         foodTypeList.add(new CategoryObject(object.getId(), object.getName()));
                     }
                 }

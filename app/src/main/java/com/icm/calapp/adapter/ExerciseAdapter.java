@@ -10,52 +10,50 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.icm.calapp.R;
-import com.icm.calapp.custom.CategotyIcon;
-import com.icm.calapp.model.FoodAndDrinkObject;
+import com.icm.calapp.model.ExerciseObject;
 
 import java.util.ArrayList;
 
-public class FoodAndDrinkAllAdapter extends RecyclerView.Adapter<FoodAndDrinkAllAdapter.ViewHolder> {
+public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.ViewHolder> {
 
-    private ArrayList<FoodAndDrinkObject> foodAndDrinkArrayList = new ArrayList<>();
+    private ArrayList<ExerciseObject> exerciseArrayList = new ArrayList<>();
 
     private Activity activity;
     private OnItemClickListener onItemClickListener;
 
-    public FoodAndDrinkAllAdapter(Activity activity) {
+    public ExerciseAdapter(Activity activity) {
         this.activity = activity;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_food_or_drink_list, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_food_and_drink, parent, false);
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        FoodAndDrinkObject foodAndDrinkObject = foodAndDrinkArrayList.get(position);
+        ExerciseObject exerciseObject = exerciseArrayList.get(position);
 
-        holder.txtName.setText(foodAndDrinkObject.getName());
-        holder.txtCaloriePerUnit.setText(activity.getString(R.string.food_and_drink_calorie_per_unit,
-                foodAndDrinkObject.getCalorie(),
-                foodAndDrinkObject.getUnit()));
-        holder.imgIcon.setImageResource(CategotyIcon.getIcon(foodAndDrinkObject.getTypeId()));
+        holder.txtName.setText(exerciseObject.getName());
+        holder.txtCaloriePerUnit.setText(activity.getString(R.string.exercise_calorie_per_hour,
+                exerciseObject.getCaloriePerHour()));
+//        holder.imgIcon.setImageResource(CategotyIcon.getIcon(exerciseObject.getTypeId()));
 
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
 
-        if (position == foodAndDrinkArrayList.size() - 1) {
+        if (position == exerciseArrayList.size() - 1) {
             params.setMargins(0, 15, 0, 15);
         } else {
             params.setMargins(0, 15, 0, 0);
         }
         holder.itemView.setLayoutParams(params);
 
-        holder.imgIconAdd.setOnClickListener(new View.OnClickListener() {
+        holder.imgDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (onItemClickListener == null) {
@@ -68,31 +66,39 @@ public class FoodAndDrinkAllAdapter extends RecyclerView.Adapter<FoodAndDrinkAll
 
     @Override
     public int getItemCount() {
-        return foodAndDrinkArrayList.size();
+        return exerciseArrayList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView txtName;
         private TextView txtCaloriePerUnit;
         private ImageView imgIcon;
-        private ImageView imgIconAdd;
+        private ImageView imgDelete;
+
 
         public ViewHolder(View v) {
             super(v);
             txtName = (TextView) v.findViewById(R.id.textviewName);
             txtCaloriePerUnit = (TextView) v.findViewById(R.id.textviewCaloriePerUnit);
             imgIcon = (ImageView) v.findViewById(R.id.imageviewIcon);
-            imgIconAdd = (ImageView) v.findViewById(R.id.imageviewAdd);
+            imgDelete = (ImageView) v.findViewById(R.id.imageviewDelete);
+
         }
     }
 
-    public void setFoodAndDrinkArrayList(ArrayList<FoodAndDrinkObject> foodAndDrinkArrayList) {
-        this.foodAndDrinkArrayList = foodAndDrinkArrayList;
+    public void setExerciseArrayList(ArrayList<ExerciseObject> exerciseArrayList) {
+        this.exerciseArrayList = exerciseArrayList;
         notifyDataSetChanged();
     }
 
-    public ArrayList<FoodAndDrinkObject> getFoodAndDrinkArrayList() {
-        return this.foodAndDrinkArrayList;
+    public ArrayList<ExerciseObject> getExerciseArrayList() {
+        return this.exerciseArrayList;
+    }
+
+    public void removeAt(int position) {
+        this.exerciseArrayList.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, this.exerciseArrayList.size());
     }
 
     public interface OnItemClickListener {
