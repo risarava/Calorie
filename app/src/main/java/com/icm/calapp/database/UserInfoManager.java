@@ -19,6 +19,7 @@ public class UserInfoManager {
     public void addUserInfo(final UserInfoObject userObject) {
         realm.beginTransaction();
         UserInfoObject object = realm.createObject(UserInfoObject.class);
+        object.setGender(userObject.getGender());
         object.setWeight(userObject.getWeight());
         object.setHeight(userObject.getHeight());
         object.setAge(userObject.getAge());
