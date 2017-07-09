@@ -101,10 +101,6 @@ public class CalculatorResultActivity extends AbstractAppCompatActivity implemen
             txtResult.setText(getString(R.string.calculator_result_result, getResources().getString(R.string.calculator_result_slim)));
         }
 
-//        String recommend = (part + 100 > 0) ?
-//                getResources().getString(R.string.button_recommend_food) :
-//                getResources().getString(R.string.button_recommend_food);
-
         txtRecommend.setText(recommend);
 
     }

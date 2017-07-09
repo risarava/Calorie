@@ -21,6 +21,7 @@ import com.icm.calapp.database.ExerciseManager;
 import com.icm.calapp.model.ExerciseObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ExerciseAllActivity extends AbstractAppCompatActivity {
 
@@ -62,6 +63,7 @@ public class ExerciseAllActivity extends AbstractAppCompatActivity {
                 , "exercise.json"), new TypeToken<ArrayList<ExerciseObject>>() {
         }.getType());
 
+        Collections.shuffle(exerciseArrayList);
         adapter.setExerciseArrayList(exerciseArrayList);
 
         setSpinner();
@@ -99,10 +101,12 @@ public class ExerciseAllActivity extends AbstractAppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
+                        Collections.shuffle(exerciseArrayList);
                         adapter.setExerciseArrayList(exerciseArrayList);
                         break;
 
                     default:
+                        Collections.shuffle(exerciseArrayList);
                         adapter.filterHeavyness(position, exerciseArrayList);
                         break;
                 }
