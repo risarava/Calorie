@@ -30,6 +30,7 @@ import com.icm.calapp.model.RecommendFoodObject;
 import com.icm.calapp.model.UserInfoObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class FoodDrinkAllActivity extends AbstractAppCompatActivity {
     public static final int TYPE_CHICKEN = 1;
@@ -256,6 +257,7 @@ public class FoodDrinkAllActivity extends AbstractAppCompatActivity {
                         }
                     }
 
+                    Collections.shuffle(arrayList);
                     adapter.setFoodAndDrinkArrayList(arrayList);
                 }
             }
