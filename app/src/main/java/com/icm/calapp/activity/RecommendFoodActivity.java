@@ -11,12 +11,19 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.icm.calapp.R;
-import com.icm.calapp.adapter.ExerciseAdapter;
 import com.icm.calapp.adapter.RecommendFoodAdapter;
 import com.icm.calapp.custom.AbstractAppCompatActivity;
 import com.icm.calapp.custom.MyAlertDialog;
-import com.icm.calapp.database.ExerciseManager;
+import com.icm.calapp.database.DrinkManager;
+import com.icm.calapp.database.FoodManager;
 import com.icm.calapp.database.RecommendFoodManager;
+import com.icm.calapp.database.UserInfoManager;
+import com.icm.calapp.model.DrinkObject;
+import com.icm.calapp.model.FoodObject;
+import com.icm.calapp.model.RecommendFoodObject;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 import static com.icm.calapp.MainActivity.EXTRA_CALORIE;
 import static com.icm.calapp.activity.FoodDrinkAllActivity.EXTRA_IS_RECOMMEND;
@@ -32,6 +39,9 @@ public class RecommendFoodActivity extends AbstractAppCompatActivity {
     private LinearLayoutManager linearLayoutManager;
     private RecommendFoodAdapter adapter;
     private RecommendFoodManager recommendFoodManager;
+    private UserInfoManager userInfoManager;
+    private FoodManager foodManager;
+    private DrinkManager drinkManager;
     private MyAlertDialog myAlertDialog;
 
     @Override
@@ -62,6 +72,9 @@ public class RecommendFoodActivity extends AbstractAppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recycleView);
 
         recommendFoodManager = new RecommendFoodManager();
+        userInfoManager = new UserInfoManager();
+        foodManager = new FoodManager();
+        drinkManager = new DrinkManager();
 
         calorie = (int) getIntent().getDoubleExtra(EXTRA_CALORIE, 0);
 
@@ -70,8 +83,11 @@ public class RecommendFoodActivity extends AbstractAppCompatActivity {
     @Override
     protected void setupUI() {
         onBackPressedButtonLeft();
+        recommendFoodManager.deleteAll();
 
         initRecycleView();
+
+        setRecommendFood();
     }
 
     private void update() {
@@ -114,6 +130,44 @@ public class RecommendFoodActivity extends AbstractAppCompatActivity {
                         });
             }
         });
+    }
+
+    private void setRecommendFood() {
+        int calorieFood = 0;
+        ArrayList<FoodObject> foodObjectArrayList = foodManager.queryAll();
+        Collections.shuffle(foodObjectArrayList);
+
+        for (FoodObject object : foodObjectArrayList) {
+            if (calorieFood < calorie) {
+                if ((calorieFood + object.getCalorie()) <= calorie) {
+                    calorieFood += object.getCalorie();
+                    recommendFoodManager.addRecommendFood(new RecommendFoodObject(
+                            object.getId(), object.getName(),
+                            object.getUnit(), object.getTypeId(),
+                            object.getType(), object.getCalorie(),
+                            object.islamic()));
+                }
+            }
+        }
+
+        ArrayList<DrinkObject> drinkObjectArrayList = drinkManager.queryAll();
+        Collections.shuffle(drinkObjectArrayList);
+
+        for (DrinkObject object : drinkObjectArrayList) {
+            if (calorieFood < calorie) {
+                if ((calorieFood + object.getCalorie()) <= calorie) {
+                    calorieFood += object.getCalorie();
+                    recommendFoodManager.addRecommendFood(new RecommendFoodObject(
+                            object.getId(), object.getName(),
+                            object.getUnit(), object.getTypeId(),
+                            object.getType(), object.getCalorie(),
+                            object.islamic()));
+                }
+            }
+        }
+        adapter.setRecommendFoodArrayList(recommendFoodManager.queryAll());
+        update();
+
     }
 
     public void endButton(View view) {
