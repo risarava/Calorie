@@ -17,6 +17,7 @@ public class UserInfoManager {
     }
 
     public void addUserInfo(final UserInfoObject userObject) {
+        deleteAll();
         realm.beginTransaction();
         UserInfoObject object = realm.createObject(UserInfoObject.class);
         object.setGender(userObject.getGender());
