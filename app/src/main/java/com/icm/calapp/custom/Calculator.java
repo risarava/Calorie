@@ -38,4 +38,9 @@ public class Calculator {
         }
         return bmr * exerciseDob;
     }
+
+    public static double calculateBMI(int weight, int height) {
+        double heightDouble = height / 100.0;
+        return (weight / (Math.pow(heightDouble, 2)));
+    }
 }

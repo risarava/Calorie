@@ -3,6 +3,7 @@ package com.icm.calapp.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.text.Spannable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -12,6 +13,7 @@ import com.icm.calapp.R;
 import com.icm.calapp.custom.AbstractAppCompatActivity;
 import com.icm.calapp.custom.Calculator;
 import com.icm.calapp.custom.MyAlertDialog;
+import com.icm.calapp.custom.SpannableText;
 import com.icm.calapp.database.UserInfoManager;
 import com.icm.calapp.model.UserInfoObject;
 
@@ -80,29 +82,40 @@ public class CalculatorResultActivity extends AbstractAppCompatActivity implemen
     }
 
     private void calculate() {
-        txtCalorie.setText(getString(R.string.calculator_result_calorie, (calorie)));
+        txtCalorie.setText(SpannableText.getSpan(activity, getString(R.string.calculator_result_calorie, calorie),
+                String.valueOf(calorie)));
 
         bmr = Calculator.calculateBMR(userInfoObject.getGender(), userInfoObject.getWeight(),
                 userInfoObject.getHeight(), userInfoObject.getAge());
-        txtBMR.setText(getString(R.string.calculator_result_bmr, bmr));
+        txtBMR.setText(SpannableText.getSpan(activity, getString(R.string.calculator_result_bmr, bmr),
+                String.format("%,.2f", bmr)));
+
         tdee = Calculator.calculateTDEE(bmr, userInfoObject.getExercise());
-        txtTDEE.setText(getString(R.string.calculator_result_tdee, tdee));
+
+        txtTDEE.setText(SpannableText.getSpan(activity, getString(R.string.calculator_result_tdee, tdee),
+                String.format("%,.2f", tdee)));
 
         double part = (tdee - calorie);
         String recommend = "";
         if (part < -100) {
             recommend = getResources().getString(R.string.button_recommend_exercise);
-            txtResult.setText(getString(R.string.calculator_result_result, getResources().getString(R.string.calculator_result_fat)));
+//            txtResult.setText(SpannableText.getSpan(activity,  getString(R.string.calculator_result_result,
+//                    getResources().getString(R.string.calculator_result_fat)),
+//                    getResources().getString(R.string.calculator_result_fat)));
         } else if (part > 100) {
             recommend = getResources().getString(R.string.button_recommend_food);
-            txtResult.setText(getString(R.string.calculator_result_result, getResources().getString(R.string.calculator_result_thin)));
+//            txtResult.setText(SpannableText.getSpan(activity, getString(R.string.calculator_result_result,
+//                    getResources().getString(R.string.calculator_result_thin)),
+//                    getResources().getString(R.string.calculator_result_thin)));
         } else {
             txtRecommend.setVisibility(View.GONE);
-            txtResult.setText(getString(R.string.calculator_result_result, getResources().getString(R.string.calculator_result_slim)));
+//            txtResult.setText(SpannableText.getSpan(activity, getString(R.string.calculator_result_result,
+//                    getResources().getString(R.string.calculator_result_slim)),
+//                    getResources().getString(R.string.calculator_result_slim)));
         }
 
+        txtResult.setText(getBMIText(Calculator.calculateBMI(userInfoObject.getWeight(), userInfoObject.getHeight())));
         txtRecommend.setText(recommend);
-
     }
 
     private void updateProfile() {
@@ -116,6 +129,37 @@ public class CalculatorResultActivity extends AbstractAppCompatActivity implemen
         imgIcon.setImageResource((userInfoObject.getGender() == 1) ? R.drawable.img_male :
                 R.drawable.img_female);
 
+    }
+
+    public Spannable getBMIText(double bmi) {
+        Spannable spannable;
+        if (bmi < 18.5) {
+            //ผอมเกินไป
+            spannable = SpannableText.getSpan(activity,  getString(R.string.calculator_result_result,
+                    "ผอมเกินไป"),
+                    "ผอมเกินไป");
+        } else if(bmi >= 18.6 && bmi <= 22.9) {
+            //น้ำหนักปกติ เหมาะสม
+            spannable = SpannableText.getSpan(activity,  getString(R.string.calculator_result_result,
+                    "น้ำหนักปกติ เหมาะสม"),
+                    "น้ำหนักปกติ เหมาะสม");
+        } else if (bmi >= 23 && bmi <= 24.9) {
+            //น้ำหนักเกิน
+            spannable = SpannableText.getSpan(activity,  getString(R.string.calculator_result_result,
+                    "น้ำหนักเกิน"),
+                    "น้ำหนักเกิน");
+        } else if (bmi >= 25 && bmi<= 29.9) {
+            //อ้วน
+            spannable = SpannableText.getSpan(activity,  getString(R.string.calculator_result_result,
+                    "อ้วน"),
+                    "อ้วน");
+        } else {
+            //อ้วนมาก
+            spannable = SpannableText.getSpan(activity,  getString(R.string.calculator_result_result,
+                    "อ้วนมาก"),
+                    "อ้วนมาก");
+        }
+        return spannable;
     }
 
     public void endButton(View view) {

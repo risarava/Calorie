@@ -13,6 +13,7 @@ import com.icm.calapp.R;
 import com.icm.calapp.adapter.RecommendExerciseAdapter;
 import com.icm.calapp.custom.AbstractAppCompatActivity;
 import com.icm.calapp.custom.MyAlertDialog;
+import com.icm.calapp.custom.SpannableText;
 import com.icm.calapp.database.ExerciseManager;
 
 import static com.icm.calapp.MainActivity.EXTRA_CALORIE;
@@ -76,8 +77,10 @@ public class RecommendExerciseActivity extends AbstractAppCompatActivity {
         if (calorie < 0) {
             calorie = calorie * (-1);
         }
-        txtSelected.setText(getString(R.string.exercise_selected, adapter.getItemCount()));
-        txtNeedUsed.setText(getString(R.string.exercise_need_used, calorie));
+        txtSelected.setText(SpannableText.getSpan(activity, getString(R.string.exercise_selected, adapter.getItemCount()),
+                String.valueOf(adapter.getItemCount())));
+        txtNeedUsed.setText(SpannableText.getSpan(activity, getString(R.string.exercise_need_used, calorie),
+                String.valueOf(calorie)));
     }
 
     public void endButton(View view) {

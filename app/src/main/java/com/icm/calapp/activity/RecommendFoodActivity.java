@@ -14,6 +14,7 @@ import com.icm.calapp.R;
 import com.icm.calapp.adapter.RecommendFoodAdapter;
 import com.icm.calapp.custom.AbstractAppCompatActivity;
 import com.icm.calapp.custom.MyAlertDialog;
+import com.icm.calapp.custom.SpannableText;
 import com.icm.calapp.database.DrinkManager;
 import com.icm.calapp.database.FoodManager;
 import com.icm.calapp.database.RecommendFoodManager;
@@ -64,7 +65,7 @@ public class RecommendFoodActivity extends AbstractAppCompatActivity {
 
     @Override
     protected void bindUI(Bundle savedInstanceState) {
-        setTitle(R.string.title_toolbar_exercise);
+        setTitle(R.string.title_toolbar_food);
 
         txtSelected = (TextView) findViewById(R.id.textviewSelected);
         txtNeed = (TextView) findViewById(R.id.textviewNeed);
@@ -95,8 +96,11 @@ public class RecommendFoodActivity extends AbstractAppCompatActivity {
             //convert to positive
             calorie = calorie * (-1);
         }
-        txtSelected.setText(getString(R.string.recommend_food_need, calorie));
-        txtNeed.setText(getString(R.string.recommend_food_selected, adapter.getCalorie()));
+        txtSelected.setText(SpannableText.getSpan(activity, getString(R.string.recommend_food_need, calorie),
+                String.valueOf(calorie)));
+        txtNeed.setText(SpannableText.getSpan(activity, getString(R.string.recommend_food_selected, adapter.getCalorie()),
+                String.valueOf(adapter.getCalorie())));
+
         String status = "";
         if (calorie > adapter.getCalorie()) {
             status = getResources().getString(R.string.recommend_food_status_more);
@@ -105,7 +109,9 @@ public class RecommendFoodActivity extends AbstractAppCompatActivity {
         } else if (calorie < adapter.getCalorie()) {
             status = getResources().getString(R.string.recommend_food_status_max);
         }
-        txtStatus.setText(getString(R.string.recommend_food_status, status));
+        txtStatus.setText(SpannableText.getSpan(activity, getString(R.string.recommend_food_status, status),
+                status));
+
     }
 
     private void initRecycleView() {

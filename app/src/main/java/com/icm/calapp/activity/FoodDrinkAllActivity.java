@@ -88,6 +88,7 @@ public class FoodDrinkAllActivity extends AbstractAppCompatActivity {
 
     @Override
     protected void setupUI() {
+        onBackPressedButtonLeft();
         initRecycleView();
 
         setSpinner();

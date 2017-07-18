@@ -18,6 +18,7 @@
     <string name="title_toolbar_food_and_drink">อาหารและเครื่องดื่ม</string>
     <string name="title_toolbar_calculation_result">ผลการคำนวณ</string>
     <string name="title_toolbar_exercise">รายการกิจกรรม</string>
+    <string name="title_toolbar_food">รายการอาหาร</string>
     <string name="title_toolbar_exercise_all">กิจกรรม</string>
     <string name="title_toolbar_recommend_exercise">แนะนำการออกกำลังกาย</string>
 

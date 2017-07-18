@@ -57,6 +57,8 @@
             android:hint="0"
             android:paddingLeft="@dimen/padding_small"
             android:paddingRight="@dimen/padding_small"
+            android:textColor="@color/color_text_span"
+            android:textColorHint="@color/color_text_span"
             android:textSize="@dimen/text_small" />
 
         <TextView

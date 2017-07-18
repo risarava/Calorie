@@ -16,4 +16,6 @@
     <color name="color_gray_light_text">#c9d1d7</color>
     <color name="color_text_black">#494949</color>
     <color name="color_black">#000000</color>
+    <color name="color_text_span">#000000</color>
+
 </resources>
